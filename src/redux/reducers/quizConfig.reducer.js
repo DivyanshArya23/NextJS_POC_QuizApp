@@ -15,11 +15,11 @@ const initialState = [
   },
 ];
 
-const QuizReducer = (state = initialState, { type, payload }) => {
+const QuizConfig = (state = initialState, { type, payload }) => {
   switch (type) {
     default:
       return state;
   }
 };
 
-export default QuizReducer;
+export default QuizConfig;

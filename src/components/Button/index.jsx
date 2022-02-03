@@ -1,5 +1,6 @@
+import React from "react";
 import classNames from "classnames";
-import classes from "./Button.module.scss";
+import styles from "./Button.module.scss";
 
 const Button = ({
   className,
@@ -16,9 +17,8 @@ const Button = ({
   <button
     style={style}
     className={classNames(
-      "globalButton",
-      classes.input,
-      active ? classes.activeButton : "",
+      styles.input,
+      active ? styles.activeButton : "",
       className
     )}
     type={type}

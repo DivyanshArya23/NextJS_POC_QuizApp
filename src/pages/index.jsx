@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import Quiz from "../components/Quiz";
 import { useSelector } from "react-redux";
 

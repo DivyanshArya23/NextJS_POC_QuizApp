@@ -18,7 +18,6 @@ const QuizReducer = (state = initialState, { type, payload }) => {
             ...(state[payload.qIndex]?.qnaData || []),
             { ...payload.qData },
           ],
-          // [payload.questionNumber]: { ...payload.qData },
           score: payload.score,
         },
       };

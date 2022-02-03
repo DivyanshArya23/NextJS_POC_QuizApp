@@ -6,15 +6,15 @@ $darkBlue: #071e54;
 $lightBlue: #35d3e1;
 $mediumBlue: #264a9f;
 $vividBlue: #195dff;
-$egyptian_blue: #0d3594e5;
-$turquoise: #35d3e1;
+$veryLightRed: #ffebeb46;
+$veryLightBlue: #e1e6ff;
 
-$outerShadow: 3px 3px 6px $linkWater, -3px -3px 6px $white;
 $cardBgColor: linear-gradient(
   to bottom right,
   $lightGrayishBlue,
   $lightBluishGray
 );
+$outerShadow: 3px 3px 6px $linkWater, -3px -3px 6px $white;
 $outerShadowDark: 3.5px 3.5px 6px rgba(25, 93, 255, 0.4),
   -3.5px -3.5px 6px $white;
 
@@ -24,8 +24,3 @@ $blueBgGradient: linear-gradient(
   $mediumBlue 110%,
   $vividBlue 140%
 );
-
-$outerShadowDarkBig: 5px 5px 6px rgba(25, 93, 255, 0.4), -5px -5px 6px $white;
-$bottomFixedContainer: transparent
-  linear-gradient(276deg, $egyptian_blue 0%, $turquoise 100%) 0% 0% no-repeat
-  padding-box;
