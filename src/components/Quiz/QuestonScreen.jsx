@@ -4,6 +4,9 @@ import * as actions from "../../redux/actions";
 import styles from "./index.module.scss";
 import cns from "classnames";
 import { quizStages, generateQnA } from "./helper";
+import Button from "../Button";
+import Input from "../Input";
+import Score from "./Score";
 
 const QuestionScreen = ({ qIndex, config, setStage }) => {
   const { maxValue, operators, noq } = config;
@@ -29,20 +32,23 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
   }
 
   function checkAnswer({ userAnswer, currentQuestion }) {
-    return userAnswer == currentQuestion.answer;
+    return String(userAnswer) == String(currentQuestion.answer);
   }
   function onClickNext() {
     //save Current Question
     const isAnswerCorrect = checkAnswer({ userAnswer, currentQuestion });
+    let newScore = isAnswerCorrect ? score + 1 : score;
     dispatch(
       actions.addQuestion({
         qIndex: qIndex,
         questionNumber,
-        score: score + 1,
+        score: newScore,
         qData: { ...currentQuestion, userAnswer, isCorrect: isAnswerCorrect },
       })
     );
-    if (isAnswerCorrect) setScore((score) => score + 1);
+    if (isAnswerCorrect) {
+      setScore(newScore);
+    }
     // display next Question
     setUserAnswer("");
     const nxtQno = questionNumber + 1;
@@ -58,22 +64,26 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
     }
   }
   return (
-    <div className="d-flex flex-column">
-      <div className="d-flex flex-row">
+    <div className={cns(styles.questionScreen, "d-flex flex-column")}>
+      <div className={cns(styles.quesRow, "d-flex flex-row")}>
         <div>{currentQuestion?.question || "No Question Found"} = </div>
-        <input
-          className={styles.inputBox}
-          type="text"
+        &nbsp;
+        <Input
+          className={cns(styles.inputBox, "fw-bold")}
           value={userAnswer}
           onChange={onChangeAnswer}
         />
       </div>
-      <div className="d-flex flex-row">
-        <button onClick={onClickNext}>Next</button>
-      </div>
-      <div className={cns(styles.scoreBox)}>
-        <p>Score : {score}</p>
-      </div>
+      <Button
+        name="nextBtn"
+        type="button"
+        active
+        className={cns(styles.nextBtn, "fw-bold")}
+        onClick={onClickNext}
+      >
+        Next
+      </Button>
+      <Score score={score} />
     </div>
   );
 };

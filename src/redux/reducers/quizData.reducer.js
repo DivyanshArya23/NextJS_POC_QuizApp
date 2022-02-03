@@ -21,6 +21,8 @@ const QuizReducer = (state = initialState, { type, payload }) => {
           score: payload.score,
         },
       };
+    case types.RESET_QUIZ:
+      return { ...state, [payload.qIndex]: {} };
 
     default:
       return state;

@@ -9,3 +9,8 @@ export const addQuestion = (payload) => ({
   type: types.ADD_QUESTION,
   payload,
 });
+
+export const resetQuiz = (payload) => ({
+  type: types.RESET_QUIZ,
+  payload,
+});

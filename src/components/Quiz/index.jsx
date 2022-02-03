@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import cns from "classnames";
 import styles from "./index.module.scss";
 import { quizStages } from "./helper";
@@ -9,6 +9,12 @@ import ResultScreen from "./ResultScreen";
 const Quiz = ({ qIndex, config }) => {
   const [stage, setStage] = useState(quizStages.STARTPAGE);
   const [quizConfig, setQuizConfig] = useState(config);
+
+  useEffect(() => {
+    if (stage === quizStages.STARTPAGE) {
+      setQuizConfig(config);
+    }
+  }, [stage]);
 
   return (
     <div className={cns(styles.quizContainer)}>
@@ -26,7 +32,9 @@ const Quiz = ({ qIndex, config }) => {
           setStage={setStage}
         />
       )}
-      {stage === quizStages.RESULT && <ResultScreen qIndex={qIndex} />}
+      {stage === quizStages.RESULT && (
+        <ResultScreen qIndex={qIndex} setStage={setStage} />
+      )}
     </div>
   );
 };

@@ -3,3 +3,14 @@
 body {
   background-color: $veryLightRed;
 }
+.pointer {
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 1.39vh;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $scrollBarGradient;
+  min-height: 100px;
+}

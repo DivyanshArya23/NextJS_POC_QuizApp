@@ -5,41 +5,138 @@
   margin-top: 100px;
   border-radius: 20px;
   padding: 15px;
-  height: 50vh;
-  // display: flex;
-  // justify-content: center;
-  // flex-wrap:wrap;
-  // align-items: center;
+  height: 70vh;
+  display: flex;
   position: relative;
   box-shadow: -3px -3px 6px $white, 3.5px 3.5px 6px rgba($vividBlue, 0.4);
-  overflow-y: auto;
   background-color: $veryLightBlue;
-}
-.inputBox {
-  width: 40px;
 }
 //
 
-.scoreBox {
-  position: absolute;
-  bottom: 0;
-  right: 50px;
-}
-
 // StartScreen
+.startScreen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  .quesSelector {
+    margin: auto;
+    font-size: 1.5rem;
+    padding: 10px;
+    .icon {
+      color: $mediumBlue;
+    }
+    .disabledIcon {
+      opacity: 0.5;
+    }
+  }
+  .startQuizBtn {
+    font-size: 1.3rem;
+    border-radius: 30px;
+    margin: auto;
+    width: 60%;
+  }
+}
+//
+
+//questions Screen
+.questionScreen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  .quesRow {
+    font-size: 1.7rem;
+    text-align: center;
+    justify-content: center;
+    margin-top: auto;
+    font-weight: bold;
+    .inputBox {
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 1.7rem;
+      padding-left: 50px;
+      width: 60px;
+      border-radius: 20px;
+    }
+  }
+  .nextBtn {
+    margin: auto;
+    width: 60%;
+  }
+}
 //
 
 //Result Screen
-.resultContainer {
-  .singleResult {
-    border: 2px solid rgba(183, 183, 183, 0.414);
-    border-radius: 10px;
+.resultScreen {
+  padding-left: 10px;
+  width: 100%;
+  overflow-y: scroll;
+  margin-bottom: 30px;
+  .resultContainer {
+    position: relative;
+    padding-top: 10px;
+    padding-right: 10px;
+    display: block;
+    width: 100%;
+    .singleResult {
+      height: fit-content;
+      box-shadow: $inputInnerShadow;
+      background-color: $white;
+      border: 2px solid rgba(183, 183, 183, 0.414);
+      border-radius: 10px;
+      .question {
+        font-size: 1.5rem;
+        color: $darkBlue;
+      }
+      .corrAns {
+        color: green;
+      }
+    }
+    .correct {
+      background-color: $corrAnsBg;
+      .userAns {
+        color: green;
+      }
+    }
+    .incorrect {
+      background-color: $incorrAnsBg;
+      .userAns {
+        color: red;
+      }
+    }
   }
-  .correct {
-    border-color: rgb(0, 255, 0);
+  .resultBottomRow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: end;
+    // padding-right: 50px;
+    .finalScore {
+      width: 50%;
+      position: relative;
+      display: inline-block;
+    }
+    .resetBtn {
+      color: $mediumBlue;
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+      right: 10px;
+      :hover {
+        color: $darkBlue;
+        cursor: pointer;
+      }
+    }
   }
-  .incorrect {
-    border-color: red;
-  }
+}
+//
+
+//Score Component
+.scoreBox {
+  display: inline;
+  position: absolute;
+  bottom: 0;
 }
 //

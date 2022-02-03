@@ -8,18 +8,28 @@ $mediumBlue: #264a9f;
 $vividBlue: #195dff;
 $veryLightRed: #ffebeb46;
 $veryLightBlue: #e1e6ff;
+$corrAnsBg: rgba(0, 255, 0, 0.413);
+$incorrAnsBg: rgba(255, 0, 0, 0.413);
 
 $cardBgColor: linear-gradient(
   to bottom right,
   $lightGrayishBlue,
   $lightBluishGray
 );
+
+$inputInnerShadow: inset 3px 3px 6px $linkWater, inset -3px -3px 6px $white;
 $outerShadow: 3px 3px 6px $linkWater, -3px -3px 6px $white;
 $outerShadowDark: 3.5px 3.5px 6px rgba(25, 93, 255, 0.4),
   -3.5px -3.5px 6px $white;
 
 $blueBgGradient: linear-gradient(
   to right,
+  $lightBlue -45%,
+  $mediumBlue 110%,
+  $vividBlue 140%
+);
+$scrollBarGradient: linear-gradient(
+  45deg,
   $lightBlue -45%,
   $mediumBlue 110%,
   $vividBlue 140%
