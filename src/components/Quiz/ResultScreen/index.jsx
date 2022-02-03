@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import cns from "classnames";
 import styles from "./resultScreen.module.scss";
-import Score from "./Score";
-import * as actions from "../../redux/actions";
-import { quizStages } from "./helper";
+import Score from "./../Score";
+import * as actions from "./../../../redux/actions";
+import { quizStages } from "./../helper";
 
 const ResultScreen = ({ qIndex, setStage }) => {
   const { qnaData, score } = useSelector((state) => state.quizData[qIndex]);

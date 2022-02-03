@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import cns from "classnames";
-import * as actions from "../../redux/actions";
+import * as actions from "./../../../redux/actions";
 import styles from "./questionScreen.module.scss";
-import { quizStages, generateQnA, checkAnswer } from "./helper";
-import Button from "../Button";
-import Input from "../Input";
-import Score from "./Score";
+import { quizStages, generateQnA, checkAnswer } from "./../helper";
+import Button from "./../../Button";
+import Input from "./../../Input";
+import Score from "./../Score";
 
 const QuestionScreen = ({ qIndex, config, setStage }) => {
   const { maxValue, operators, noq } = config;

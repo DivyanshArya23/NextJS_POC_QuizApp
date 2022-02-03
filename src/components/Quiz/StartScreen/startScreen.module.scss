@@ -1,11 +1,11 @@
-@import "./../../assets/styles/vars";
+@import "./../../../assets/styles/vars";
 
 .startScreen {
   display: flex;
   flex-direction: column;
   width: 100%;
   text-align: center;
-  .quesSelector {
+  .noqChanger {
     margin: auto;
     font-size: 1.5rem;
     padding: 10px;

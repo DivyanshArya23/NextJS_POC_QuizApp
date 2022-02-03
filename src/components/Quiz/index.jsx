@@ -3,7 +3,7 @@ import cns from "classnames";
 import styles from "./index.module.scss";
 import { quizStages } from "./helper";
 import StartScreen from "./StartScreen";
-import QuestionScreen from "./QuestonScreen";
+import QuestionScreen from "./QuestionScreen";
 import ResultScreen from "./ResultScreen";
 
 const Quiz = ({ qIndex, config }) => {
