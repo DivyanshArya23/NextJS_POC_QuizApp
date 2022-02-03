@@ -1,0 +1,42 @@
+$white: #fff;
+$vividBlue: #195dff;
+
+.quizContainer {
+  margin-top:100px;
+  border-radius: 20px;
+  padding: 15px;
+  height: 50vh;
+  // display: flex;
+  // justify-content: center;
+  // flex-wrap:wrap;
+  // align-items: center;
+  position: relative;
+  box-shadow: -3px -3px 6px $white, 3.5px 3.5px 6px rgba($vividBlue, 0.4);
+  overflow-y: auto;
+  background-color: #e1e6ff;
+}
+.inputBox {
+  width: 40px;
+}
+.scoreBox {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+}
+.resultContainer {
+  .singleResult {
+    border: 2px solid rgba(183, 183, 183, 0.414);
+    border-radius: 10px;
+  }
+  .correct {
+    border-color: rgb(0, 255, 0) !important;
+  }
+  .incorrect {
+    border-color: red !important;
+  }
+}
+
+.startBtnDiv{
+  text-align: center;
+  margin: auto;
+}
