@@ -1,0 +1,78 @@
+@import './../../assets/styles/vars';
+
+.input {
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  padding: 8px 10px;
+  font-size: 13px;
+  box-shadow: $outerShadow;
+  background: $cardBgColor;
+  opacity: 1;
+  color: rgba($darkBlue, 0.3);
+  &:focus {
+    outline: none;
+    box-shadow: $outerShadowDark;
+  }
+  &:hover {
+    color: rgba($darkBlue, 0.3);
+    box-shadow: $outerShadowDark;
+  }
+}
+
+.removeHoverEffect {
+  &:hover {
+    box-shadow: $outerShadow;
+  }
+}
+
+.activeButton {
+  background: $blueBgGradient;
+  color: $white;
+  opacity: 1;
+  &:hover {
+    color: $white;
+    opacity: 1;
+  }
+}
+.seconderyBtnClass {
+  color: $mediumBlue;
+  opacity: 1;
+
+  &:hover {
+    color: $mediumBlue;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1900px) {
+  .input {
+    &:focus,
+    &:hover {
+      box-shadow: $outerShadowDarkBig !important;
+    }
+  }
+  .removeHoverEffect {
+    &:hover {
+      box-shadow: $outerShadow !important;
+    }
+  }
+}
+
+.bottomFixed {
+  @media (max-width: 786px) {
+    border-radius: 0;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 63px;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 786px) {
+  .activeButton {
+    background: $bottomFixedContainer;
+  }
+}
