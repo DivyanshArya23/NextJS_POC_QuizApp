@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import * as actions from "../../redux/actions";
-import styles from "./index.module.scss";
 import cns from "classnames";
-import { quizStages, generateQnA } from "./helper";
+import * as actions from "../../redux/actions";
+import styles from "./questionScreen.module.scss";
+import { quizStages, generateQnA, checkAnswer } from "./helper";
 import Button from "../Button";
 import Input from "../Input";
 import Score from "./Score";
@@ -31,9 +31,6 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
     setUserAnswer(e.target.value);
   }
 
-  function checkAnswer({ userAnswer, currentQuestion }) {
-    return String(userAnswer) == String(currentQuestion.answer);
-  }
   function onClickNext() {
     //save Current Question
     const isAnswerCorrect = checkAnswer({ userAnswer, currentQuestion });

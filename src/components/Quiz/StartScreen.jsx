@@ -1,6 +1,6 @@
 import React from "react";
 import cns from "classnames";
-import styles from "./index.module.scss";
+import styles from "./startScreen.module.scss";
 import Button from "../Button";
 import { quizStages } from "./helper";
 

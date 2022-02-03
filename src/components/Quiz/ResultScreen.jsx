@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styles from "./index.module.scss";
 import cns from "classnames";
+import styles from "./resultScreen.module.scss";
 import Score from "./Score";
 import * as actions from "../../redux/actions";
 import { quizStages } from "./helper";
@@ -18,30 +18,27 @@ const ResultScreen = ({ qIndex, setStage }) => {
   return (
     <div className={styles.resultScreen}>
       <div className={cns("row", styles.resultContainer)}>
-        {qnaData?.map(
-          // todo: remove qnaDatacopy and use qnaData
-          ({ question, answer, userAnswer, isCorrect }, index) => (
-            <Fragment key={index}>
-              <div
-                className={cns(
-                  "col-12 p-2 m-2 fw-bold",
-                  styles.singleResult,
-                  isCorrect ? styles.correct : styles.incorrect
-                )}
-              >
-                <div className={cns(styles.question, "row")}>
-                  <div>Question : {question}</div>
-                </div>
-                <div className={cns(styles.corrAns, "row")}>
-                  <div>Correct Answer : {answer}</div>
-                </div>
-                <div className={cns(styles.userAns, "row")}>
-                  <div>Your Answer : {userAnswer}</div>
-                </div>
+        {qnaData?.map(({ question, answer, userAnswer, isCorrect }, index) => (
+          <Fragment key={index}>
+            <div
+              className={cns(
+                "col-12 p-2 m-2 fw-bold",
+                styles.singleResult,
+                isCorrect ? styles.correct : styles.incorrect
+              )}
+            >
+              <div className={cns(styles.question, "row")}>
+                <div>Question : {question}</div>
               </div>
-            </Fragment>
-          )
-        )}
+              <div className={cns(styles.corrAns, "row")}>
+                <div>Correct Answer : {answer}</div>
+              </div>
+              <div className={cns(styles.userAns, "row")}>
+                <div>Your Answer : {userAnswer}</div>
+              </div>
+            </div>
+          </Fragment>
+        ))}
       </div>
       <div className={styles.resultBottomRow}>
         <Score

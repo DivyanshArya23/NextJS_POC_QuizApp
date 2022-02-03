@@ -1,6 +1,6 @@
 import React from "react";
 import cns from "classnames";
-import styles from "./index.module.scss";
+import styles from "./score.module.scss";
 
 const Score = ({ text = "Score : ", score, mm, className = "" }) => {
   return (

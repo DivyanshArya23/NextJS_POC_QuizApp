@@ -10,6 +10,9 @@ $veryLightRed: #ffebeb46;
 $veryLightBlue: #e1e6ff;
 $corrAnsBg: rgba(0, 255, 0, 0.413);
 $incorrAnsBg: rgba(255, 0, 0, 0.413);
+$red: red;
+$green: green;
+$lightGrey: rgba(183, 183, 183, 0.414);
 
 $cardBgColor: linear-gradient(
   to bottom right,
@@ -19,6 +22,7 @@ $cardBgColor: linear-gradient(
 
 $inputInnerShadow: inset 3px 3px 6px $linkWater, inset -3px -3px 6px $white;
 $outerShadow: 3px 3px 6px $linkWater, -3px -3px 6px $white;
+$outerShadow2: -3px -3px 6px $white, 3.5px 3.5px 6px rgba($vividBlue, 0.4);
 $outerShadowDark: 3.5px 3.5px 6px rgba(25, 93, 255, 0.4),
   -3.5px -3.5px 6px $white;
 

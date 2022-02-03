@@ -24,3 +24,7 @@ export const generateQnA = ({ maxValue, operators }) => {
 
   return { question: questionString, answer };
 };
+
+export function checkAnswer({ userAnswer, currentQuestion }) {
+  return String(userAnswer) == String(currentQuestion.answer);
+}

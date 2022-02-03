@@ -1,0 +1,64 @@
+@import "./../../assets/styles/vars";
+
+.resultScreen {
+  padding-left: 10px;
+  width: 100%;
+  overflow-y: scroll;
+  margin-bottom: 30px;
+  .resultContainer {
+    position: relative;
+    padding-top: 10px;
+    padding-right: 10px;
+    display: block;
+    width: 100%;
+    .singleResult {
+      height: fit-content;
+      box-shadow: $inputInnerShadow;
+      background-color: $white;
+      border: 2px solid $lightGrey;
+      border-radius: 10px;
+      .question {
+        font-size: 1.5rem;
+        color: $darkBlue;
+      }
+      .corrAns {
+        color: $green;
+      }
+    }
+    .correct {
+      background-color: $corrAnsBg;
+      .userAns {
+        color: $green;
+      }
+    }
+    .incorrect {
+      background-color: $incorrAnsBg;
+      .userAns {
+        color: $red;
+      }
+    }
+  }
+  .resultBottomRow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: end;
+    .finalScore {
+      width: 50%;
+      position: relative;
+      display: inline-block;
+    }
+    .resetBtn {
+      color: $mediumBlue;
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+      right: 10px;
+      :hover {
+        color: $darkBlue;
+        cursor: pointer;
+      }
+    }
+  }
+}
