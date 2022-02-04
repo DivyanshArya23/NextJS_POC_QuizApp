@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import cns from "classnames";
+import { useToasts } from "react-toast-notifications";
 import styles from "./startScreen.module.scss";
 import { OPERATORS } from "../helper";
 import OperatorBox from "./OperatorBox";
@@ -9,9 +10,16 @@ const OpertorSelector = ({
   quizConfig,
   setQuizConfig,
 }) => {
+  const { addToast } = useToasts();
+
   function toggleOperator(operator) {
     if (configOperators.includes(operator)) {
-      if (configOperators.length === 1) return;
+      if (configOperators.length === 1) {
+        addToast("At least one Operator is Required", {
+          appearance: "info",
+        });
+        return;
+      }
       const activeOperators = configOperators.filter((op) => op !== operator);
       setQuizConfig({ ...quizConfig, operators: activeOperators });
     } else {
