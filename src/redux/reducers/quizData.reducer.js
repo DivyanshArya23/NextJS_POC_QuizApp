@@ -9,6 +9,7 @@ const QuizReducer = (state = initialState, { type, payload }) => {
         ...state,
         [payload.qIndex]: { ...payload.qIndex, ...payload.qData },
       };
+
     case types.ADD_QUESTION:
       return {
         ...state,
@@ -21,6 +22,7 @@ const QuizReducer = (state = initialState, { type, payload }) => {
           score: payload.score,
         },
       };
+
     case types.RESET_QUIZ:
       return { ...state, [payload.qIndex]: {} };
 

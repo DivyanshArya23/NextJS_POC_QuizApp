@@ -4,7 +4,7 @@ import styles from "./startScreen.module.scss";
 import { OPERATORS } from "../helper";
 import OperatorBox from "./OperatorBox";
 
-const OperandSelector = ({
+const OpertorSelector = ({
   operators: configOperators,
   quizConfig,
   setQuizConfig,
@@ -44,4 +44,4 @@ const OperandSelector = ({
   );
 };
 
-export default OperandSelector;
+export default OpertorSelector;
