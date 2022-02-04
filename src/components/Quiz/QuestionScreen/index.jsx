@@ -3,7 +3,12 @@ import { useDispatch } from "react-redux";
 import cns from "classnames";
 import * as actions from "./../../../redux/actions";
 import styles from "./questionScreen.module.scss";
-import { quizStages, generateQnA, checkAnswer } from "./../helper";
+import {
+  quizStages,
+  generateQnA,
+  checkAnswer,
+  DECIMAL_PLACES,
+} from "./../helper";
 import Button from "./../../Button";
 import Input from "./../../Input";
 import Score from "./../Score";
@@ -69,8 +74,14 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
           className={cns(styles.inputBox, "fw-bold")}
           value={userAnswer}
           onChange={onChangeAnswer}
+          maxLength={4}
         />
       </div>
+      {currentQuestion?.answer?.includes(".") && (
+        <div className={styles.note}>
+          (Round-off Answer upto {DECIMAL_PLACES} decimal places)
+        </div>
+      )}
       <Button
         name="nextBtn"
         type="button"

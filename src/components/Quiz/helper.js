@@ -1,3 +1,5 @@
+export const DECIMAL_PLACES = 2;
+
 export const quizStages = {
   STARTPAGE: "startPage",
   INPROGRESS: "inProgress",
@@ -17,9 +19,9 @@ export const generateQnA = ({ maxValue, operators }) => {
     }
   }
   const questionString = `${operand1} ${operator} ${operand2}`;
-  let answer = eval(questionString);
-  if (operator === "/") {
-    answer = eval(questionString).toFixed(2);
+  let answer = String(eval(questionString));
+  if (operator === "/" && answer.includes(".")) {
+    answer = eval(questionString).toFixed(DECIMAL_PLACES);
   }
 
   return { question: questionString, answer };
