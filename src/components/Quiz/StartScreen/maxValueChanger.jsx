@@ -1,6 +1,7 @@
 import React from "react";
 import cns from "classnames";
 import styles from "./startScreen.module.scss";
+import { MAX_OPERAND, MIN_OPERAND } from "../helper";
 
 const MaxValueChanger = ({ onChange, maxValue }) => {
   return (
@@ -9,7 +10,7 @@ const MaxValueChanger = ({ onChange, maxValue }) => {
       <div className={cns("pl-3", styles.selection)}>
         <i
           className={cns("fa fa-minus pointer", styles.icon, {
-            [styles.disabledIcon]: maxValue <= 1,
+            [styles.disabledIcon]: maxValue <= MIN_OPERAND,
           })}
           aria-hidden="true"
           onClick={() => {
@@ -20,7 +21,7 @@ const MaxValueChanger = ({ onChange, maxValue }) => {
         {maxValue}&nbsp;
         <i
           className={cns("fa fa-plus pointer", styles.icon, {
-            [styles.disabledIcon]: maxValue >= 15,
+            [styles.disabledIcon]: maxValue >= MAX_OPERAND,
           })}
           aria-hidden="true"
           onClick={() => {

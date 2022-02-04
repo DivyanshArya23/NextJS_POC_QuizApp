@@ -14,6 +14,8 @@ $red: red;
 $green: green;
 $lightGrey: rgba(183, 183, 183, 0.414);
 $veryLightGrey: rgba(255, 255, 255, 0.324);
+$melrose: rgb(160, 160, 255);
+$blueRibbon: #004cff;
 
 $cardBgColor: linear-gradient(
   to bottom right,
@@ -22,11 +24,11 @@ $cardBgColor: linear-gradient(
 );
 
 $innerShadow: inset 3px 3px 6px $linkWater, inset -3px -3px 6px $white;
-$innerShadow2: inset 3px 3px 6px rgb(160, 160, 255), inset -3px -3px 6px $white;
+$innerShadow2: inset 3px 3px 6px $melrose, inset -3px -3px 6px $white;
 $outerShadow: 3px 3px 6px $linkWater, -3px -3px 6px $white;
 $outerShadow2: -3px -3px 6px $white, 3.5px 3.5px 6px rgba($vividBlue, 0.4);
 $outerShadow3: -3px -3px 6px $white, 3.5px 3.5px 6px rgba($mediumBlue, 0.8);
-$outerShadowDark: 3.5px 3.5px 6px rgb(0, 76, 255), -3.5px -3.5px 6px $white;
+$outerShadowDark: 3.5px 3.5px 6px $blueRibbon, -3.5px -3.5px 6px $white;
 
 $blueBgGradient: linear-gradient(
   to right,

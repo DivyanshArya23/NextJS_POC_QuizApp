@@ -1,5 +1,6 @@
 export const DECIMAL_PLACES = 2;
-
+export const MIN_OPERAND = 1;
+export const MAX_OPERAND = 15;
 export const OPERATORS = ["+", "-", "*", "/"];
 
 export const quizStages = {

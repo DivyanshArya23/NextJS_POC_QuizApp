@@ -5,7 +5,7 @@ import reducers from "./reducers";
 
 const store = createStore(
   reducers,
-  process.env.DEV_TOOLS_ENABLED
+  process?.env?.DEV_TOOLS_ENABLED
     ? composeWithDevTools(applyMiddleware(thunk))
     : compose(applyMiddleware(thunk))
 );

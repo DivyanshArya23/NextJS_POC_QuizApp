@@ -37,7 +37,7 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
   }
 
   function onClickNext() {
-    //save Current Question
+    //save Current Question/Answer/Score
     const isAnswerCorrect = checkAnswer({ userAnswer, currentQuestion });
     let newScore = isAnswerCorrect ? score + 1 : score;
     dispatch(
@@ -48,15 +48,18 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
         qData: { ...currentQuestion, userAnswer, isCorrect: isAnswerCorrect },
       })
     );
+
+    //update score if user answers correct
     if (isAnswerCorrect) {
       setScore(newScore);
     }
-    // display next Question
     setUserAnswer("");
     const nxtQno = questionNumber + 1;
     if (nxtQno > noq) {
+      // changeStage to Result, if this was last question
       setStage(quizStages.RESULT);
     } else {
+      // generating next Question
       const nxtQnA = generateQnA({
         maxValue: maxValue,
         operators: operators,
@@ -70,6 +73,7 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
       <div className={cns(styles.quesRow, "d-flex flex-row")}>
         <div>{currentQuestion?.question || "No Question Found"} = </div>
         &nbsp;
+        {/* Input for user Answer */}
         <Input
           className={cns(styles.inputBox, "fw-bold")}
           value={userAnswer}
@@ -77,6 +81,7 @@ const QuestionScreen = ({ qIndex, config, setStage }) => {
           maxLength={4}
         />
       </div>
+      {/* Division can have answer in decimals, so a note for the same */}
       {currentQuestion?.answer?.includes(".") && (
         <div className={styles.note}>
           (Round-off Answer upto {DECIMAL_PLACES} decimal places)

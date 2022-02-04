@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./startScreen.module.scss";
 import Button from "./../../Button";
-import { quizStages } from "./../helper";
+import { MAX_OPERAND, MIN_OPERAND, quizStages } from "./../helper";
 import NoqChange from "./noqChange";
 import MaxValueChanger from "./maxValueChanger";
 import OperatorSelector from "./OperatorSelector";
@@ -14,7 +14,7 @@ const StartScreen = ({ setStage, quizConfig, setQuizConfig }) => {
   }
 
   function onChangeMaxValue(newMaxValue) {
-    if (newMaxValue >= 1 && newMaxValue <= 15)
+    if (newMaxValue >= MIN_OPERAND && newMaxValue <= MAX_OPERAND)
       setQuizConfig({ ...quizConfig, maxValue: newMaxValue });
   }
 

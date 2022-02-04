@@ -18,6 +18,7 @@ const ResultScreen = ({ qIndex, setStage }) => {
   return (
     <div className={styles.resultScreen}>
       <div className={cns("row", styles.resultContainer)}>
+        {/* displaying each question Summary */}
         {qnaData?.map(({ question, answer, userAnswer, isCorrect }, index) => (
           <Fragment key={index}>
             <div
@@ -28,18 +29,20 @@ const ResultScreen = ({ qIndex, setStage }) => {
               )}
             >
               <div className={cns(styles.question, "row")}>
-                <div>Question : {question}</div>
+                <span>Question : {question}</span>
               </div>
               <div className={cns(styles.corrAns, "row")}>
-                <div>Correct Answer : {answer}</div>
+                <span>Correct Answer : {answer}</span>
               </div>
               <div className={cns(styles.userAns, "row")}>
-                <div>Your Answer : {userAnswer}</div>
+                <span>Your Answer : {userAnswer}</span>
               </div>
             </div>
           </Fragment>
         ))}
       </div>
+
+      {/* bottom Row to show score and Reset Quiz */}
       <div className={styles.resultBottomRow}>
         <Score
           className={styles.finalScore}
