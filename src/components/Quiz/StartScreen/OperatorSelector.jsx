@@ -26,7 +26,7 @@ const OpertorSelector = ({
 
   return (
     <div className={cns("fw-bold", styles.operatorSelector)}>
-      Operands
+      Operators
       <div className={cns("pl-3 pointer", styles.operatorBtnsDiv)}>
         {OPERATORS.map((operator, i) => (
           <Fragment key={i}>
