@@ -1,6 +1,7 @@
 import React, { useEffect, Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Quiz from "../components/Quiz";
+import axios from "../utils/axios";
 import * as actions from "./../redux/actions";
 
 function App({ qConfig }) {
@@ -26,23 +27,14 @@ function App({ qConfig }) {
   );
 }
 export async function getServerSideProps() {
+  const {
+    data: { configData },
+  } = await axios.get("/fetchconfig");
   return {
+    // will be passed to the page component as props
     props: {
-      qConfig: [
-        {
-          id: 1,
-          maxValue: 10,
-          noq: 2,
-          operators: ["+", "-", "/", "*"],
-        },
-        {
-          id: 2,
-          maxValue: 10,
-          noq: 20,
-          operators: ["+", "-", "/", "*"],
-        },
-      ],
-    }, // will be passed to the page component as props
+      qConfig: configData || [],
+    },
   };
 }
 export default App;
