@@ -1,5 +1,7 @@
 export const DECIMAL_PLACES = 2;
 
+export const OPERATORS = ["+", "-", "*", "/"];
+
 export const quizStages = {
   STARTPAGE: "startPage",
   INPROGRESS: "inProgress",

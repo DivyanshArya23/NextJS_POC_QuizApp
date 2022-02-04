@@ -4,9 +4,10 @@ import Button from "./../../Button";
 import { quizStages } from "./../helper";
 import NoqChange from "./noqChange";
 import MaxValueChanger from "./maxValueChanger";
+import OperandSelector from "./OperandSelector";
 
 const StartScreen = ({ setStage, quizConfig, setQuizConfig }) => {
-  const { noq, maxValue } = quizConfig;
+  const { noq, maxValue, operators } = quizConfig;
 
   function onChangeNOQ(newNoq) {
     if (newNoq >= 1) setQuizConfig({ ...quizConfig, noq: newNoq });
@@ -21,6 +22,11 @@ const StartScreen = ({ setStage, quizConfig, setQuizConfig }) => {
     <div className={styles.startScreen}>
       <NoqChange noq={noq} onChange={onChangeNOQ} />
       <MaxValueChanger maxValue={maxValue} onChange={onChangeMaxValue} />
+      <OperandSelector
+        operators={operators}
+        quizConfig={quizConfig}
+        setQuizConfig={setQuizConfig}
+      />
       <Button
         name="startQuizBtn"
         type="button"

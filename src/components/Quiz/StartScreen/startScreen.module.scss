@@ -7,7 +7,7 @@
   text-align: center;
   .noqChanger {
     margin: auto;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 10px;
     .icon {
       color: $mediumBlue;
@@ -21,5 +21,37 @@
     border-radius: 30px;
     margin: auto;
     width: 60%;
+  }
+  .operatorSelector {
+    margin: auto;
+    font-size: 1.25rem;
+    padding: 10px;
+    .operatorBox {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      margin: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .active {
+      box-shadow: $outerShadow2;
+      background-color: $cardBgColor;
+      &:hover {
+        box-shadow: $outerShadow3;
+      }
+    }
+    .inactive {
+      box-shadow: $innerShadow;
+      background-color: $veryLightGrey;
+      &:hover {
+        box-shadow: $innerShadow2;
+      }
+    }
+    .operatorBtnsDiv {
+      display: flex;
+      flex-direction: row;
+    }
   }
 }
