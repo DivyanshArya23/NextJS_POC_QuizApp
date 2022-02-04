@@ -14,3 +14,8 @@ export const resetQuiz = (payload) => ({
   type: types.RESET_QUIZ,
   payload,
 });
+
+export const updateConfig = (payload) => ({
+  type: types.UPDATE_CONFIG,
+  payload,
+});

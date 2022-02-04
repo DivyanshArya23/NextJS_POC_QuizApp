@@ -1,22 +1,12 @@
 import * as types from "../types";
 
-const initialState = [
-  {
-    id: 1,
-    maxValue: 10,
-    noq: 2,
-    operators: ["+", "-", "/", "*"],
-  },
-  {
-    id: 2,
-    maxValue: 10,
-    noq: 20,
-    operators: ["+", "-", "/", "*"],
-  },
-];
+const initialState = [];
 
 const QuizConfig = (state = initialState, { type, payload }) => {
   switch (type) {
+    case types.UPDATE_CONFIG:
+      return payload;
+
     default:
       return state;
   }

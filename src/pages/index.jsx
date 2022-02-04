@@ -1,9 +1,16 @@
-import React, { Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Quiz from "../components/Quiz";
-import { useSelector } from "react-redux";
+import * as actions from "./../redux/actions";
 
-export default function App() {
+function App({ qConfig }) {
+  const dispatch = useDispatch();
   const quizConfig = useSelector((state) => state.config);
+
+  useEffect(() => {
+    dispatch(actions.updateConfig(qConfig));
+  }, []);
+
   return (
     <div className="container">
       <div className="row">
@@ -18,3 +25,24 @@ export default function App() {
     </div>
   );
 }
+export async function getServerSideProps() {
+  return {
+    props: {
+      qConfig: [
+        {
+          id: 1,
+          maxValue: 10,
+          noq: 2,
+          operators: ["+", "-", "/", "*"],
+        },
+        {
+          id: 2,
+          maxValue: 10,
+          noq: 20,
+          operators: ["+", "-", "/", "*"],
+        },
+      ],
+    }, // will be passed to the page component as props
+  };
+}
+export default App;
